@@ -17,10 +17,6 @@
 <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
 
 <div class="flex items-center gap-2 font-semibold text-lg">
-<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-<path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.2 11.4c.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.7 2.7 2.1.1-.7.4-1.2.7-1.5-2.7-.3-5.6-1.4-5.6-6a4.7 4.7 0 011.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2A11.5 11.5 0 0112 6c1 0 2 .1 3 .4 2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 011.2 3.2c0 4.6-2.9 5.6-5.6 6 .4.3.8 1 .8 2v3c0 .4.2.7.8.6A12 12 0 0024 12c0-6.6-5.4-12-12-12z"/>
-</svg>
-
 GitHub Issues Tracker
 </div>
 
@@ -39,6 +35,7 @@ class="border rounded px-3 py-1 text-sm w-64">
 
 </div>
 </nav>
+
 
 <!-- MAIN -->
 
@@ -69,6 +66,7 @@ Closed
 
 </div>
 
+
 <!-- ISSUE HEADER -->
 
 <div class="flex justify-between items-center mb-4">
@@ -77,17 +75,8 @@ Closed
 <span id="issueCount">0</span> Issues
 </h2>
 
-<div class="flex gap-4 text-sm">
-<span class="flex items-center gap-1">
-<span class="w-2 h-2 bg-green-500 rounded-full"></span> Open
-</span>
-
-<span class="flex items-center gap-1">
-<span class="w-2 h-2 bg-purple-500 rounded-full"></span> Closed
-</span>
 </div>
 
-</div>
 
 <!-- ISSUE GRID -->
 
@@ -96,6 +85,68 @@ class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
 </div>
 
 </div>
+
+
+<!-- MODAL -->
+
+<div id="issueModal"
+class="fixed inset-0 bg-black/40 hidden items-center justify-center">
+
+<div class="bg-white w-[500px] rounded-lg p-6">
+
+<h2 id="modalTitle"
+class="text-xl font-bold mb-2"></h2>
+
+<div class="flex gap-2 mb-3 text-sm">
+
+<span id="modalStatus"
+class="bg-green-500 text-white px-2 py-1 rounded">
+</span>
+
+<span id="modalAuthor" class="text-gray-500"></span>
+
+<span id="modalDate" class="text-gray-500"></span>
+
+</div>
+
+<div class="flex gap-2 mb-3">
+
+<span id="modalLabel1"
+class="text-xs px-2 py-1 rounded bg-red-100 text-red-600"></span>
+
+<span id="modalLabel2"
+class="text-xs px-2 py-1 rounded bg-yellow-100 text-yellow-600"></span>
+
+</div>
+
+<p id="modalDesc"
+class="text-gray-600 mb-4"></p>
+
+
+<div class="grid grid-cols-2 mb-4">
+
+<div>
+<p class="text-gray-500 text-sm">Assignee</p>
+<p id="modalAssignee"></p>
+</div>
+
+<div>
+<p class="text-gray-500 text-sm">Priority</p>
+<span id="modalPriority"
+class="bg-red-500 text-white px-2 py-1 rounded text-xs"></span>
+</div>
+
+</div>
+
+<button onclick="closeModal()"
+class="bg-purple-600 text-white px-4 py-2 rounded">
+Close
+</button>
+
+</div>
+
+</div>
+
 
 <script src="issue.js"></script>
 
