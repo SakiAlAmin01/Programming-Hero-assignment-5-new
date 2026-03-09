@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GitHub Issues Tracker</title>
 
 <link href="src/output.css" rel="stylesheet">
@@ -11,21 +13,25 @@
 
 <body class="bg-gray-100">
 
+
 <!-- NAVBAR -->
 
 <nav class="bg-white border-b">
+
 <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
 
-<div class="flex items-center gap-2 font-semibold text-lg">
+<div class="font-semibold text-lg">
 GitHub Issues Tracker
 </div>
 
 <div class="flex items-center gap-3">
 
-<input id="searchInput"
+<input
+id="searchInput"
 type="text"
 placeholder="Search issues..."
-class="border rounded px-3 py-1 text-sm w-64">
+class="border rounded px-3 py-1 text-sm w-64"
+/>
 
 <button class="bg-purple-600 text-white px-4 py-1 rounded text-sm">
 + New Issue
@@ -34,6 +40,7 @@ class="border rounded px-3 py-1 text-sm w-64">
 </div>
 
 </div>
+
 </nav>
 
 
@@ -41,9 +48,10 @@ class="border rounded px-3 py-1 text-sm w-64">
 
 <div class="max-w-7xl mx-auto p-6">
 
+
 <!-- TABS -->
 
-<div class="bg-white p-4 rounded shadow mb-6">
+<div class="bg-white p-4 rounded shadow mb-4">
 
 <div class="flex gap-3">
 
@@ -67,24 +75,41 @@ Closed
 </div>
 
 
-<!-- ISSUE HEADER -->
+<!-- ISSUE COUNT -->
 
-<div class="flex justify-between items-center mb-4">
+<h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
 
-<h2 class="text-lg font-semibold">
+<span class="bg-purple-100 p-2 rounded-full">🛠</span>
+
 <span id="issueCount">0</span> Issues
-</h2>
+
+<div class="ml-auto flex gap-4 text-sm">
+
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+Open
+</div>
+
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+Closed
+</div>
 
 </div>
+
+</h2>
 
 
 <!-- ISSUE GRID -->
 
-<div id="issuesContainer"
+<div
+id="issuesContainer"
 class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
 </div>
 
+
 </div>
+
 
 
 <!-- MODAL -->
@@ -100,8 +125,7 @@ class="text-xl font-bold mb-2"></h2>
 <div class="flex gap-2 mb-3 text-sm">
 
 <span id="modalStatus"
-class="bg-green-500 text-white px-2 py-1 rounded">
-</span>
+class="bg-green-500 text-white px-2 py-1 rounded"></span>
 
 <span id="modalAuthor" class="text-gray-500"></span>
 
@@ -122,18 +146,27 @@ class="text-xs px-2 py-1 rounded bg-yellow-100 text-yellow-600"></span>
 <p id="modalDesc"
 class="text-gray-600 mb-4"></p>
 
-
 <div class="grid grid-cols-2 mb-4">
 
 <div>
-<p class="text-gray-500 text-sm">Assignee</p>
+
+<p class="text-gray-500 text-sm">
+Assignee
+</p>
+
 <p id="modalAssignee"></p>
+
 </div>
 
 <div>
-<p class="text-gray-500 text-sm">Priority</p>
+
+<p class="text-gray-500 text-sm">
+Priority
+</p>
+
 <span id="modalPriority"
 class="bg-red-500 text-white px-2 py-1 rounded text-xs"></span>
+
 </div>
 
 </div>
