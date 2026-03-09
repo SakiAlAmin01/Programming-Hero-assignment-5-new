@@ -12,7 +12,7 @@ if(username === "admin" && password === "admin123"){
 
 localStorage.setItem("loggedIn","true");
 
-window.location.href = "dashboard.html";
+window.location.href = "main.html";
 
 }else{
 
