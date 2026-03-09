@@ -63,8 +63,6 @@ const topBorder =
 isOpen ? "border-t-4 border-green-500" : "border-t-4 border-purple-500";
 
 
-// STATUS ICON
-
 const openIcon = `
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="12" cy="12" r="12" fill="#CBFADB"/>
@@ -84,8 +82,6 @@ const closedIcon = `
 const statusIcon = isOpen ? openIcon : closedIcon;
 
 
-// PRIORITY COLOR
-
 let priorityClass = "";
 
 if(issue.priority.toLowerCase() === "high"){
@@ -98,8 +94,6 @@ else if(issue.priority.toLowerCase() === "low"){
 priorityClass = "bg-green-100 text-green-600";
 }
 
-
-// LABELS
 
 const labels = issue.labels.map(label => {
 
@@ -119,8 +113,6 @@ return `<span class="text-xs bg-gray-200 px-2 py-1 rounded">${label}</span>`;
 
 }).join("");
 
-
-// CARD
 
 const card = document.createElement("div");
 
@@ -175,8 +167,6 @@ container.appendChild(card);
 }
 
 
-// TABS
-
 tabs.forEach(btn => {
 
 btn.addEventListener("click", () => {
@@ -202,8 +192,6 @@ searchInput.addEventListener("input", (e)=>{
 searchIssues(e.target.value);
 });
 
-
-// OPEN ISSUE MODAL
 
 async function openIssue(id){
 
@@ -241,8 +229,6 @@ modal.classList.add("flex");
 
 }
 
-
-// CLOSE MODAL
 
 function closeModal(){
 
