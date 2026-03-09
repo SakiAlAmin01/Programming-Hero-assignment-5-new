@@ -17,6 +17,25 @@ renderIssues();
 
 }
 
+async function searchIssues(text){
+
+if(text === ""){
+loadIssues();
+return;
+}
+
+const res = await fetch(
+`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
+);
+
+const data = await res.json();
+
+issues = data.data;
+
+renderIssues();
+
+}
+
 function renderIssues(){
 
 container.innerHTML = "";
@@ -31,11 +50,6 @@ if(currentTab === "closed"){
 filtered = issues.filter(i => i.status === "closed");
 }
 
-const search = searchInput.value.toLowerCase();
-
-filtered = filtered.filter(i =>
-i.title.toLowerCase().includes(search)
-);
 
 countEl.innerText = filtered.length;
 
@@ -184,7 +198,9 @@ renderIssues();
 });
 
 
-searchInput.addEventListener("input",renderIssues);
+searchInput.addEventListener("input", (e)=>{
+searchIssues(e.target.value);
+});
 
 
 // OPEN ISSUE MODAL
